@@ -30,6 +30,7 @@ jobs:
     needs: [ prepare-deployment ]
     uses: jpbarto/cicd-environ.cicd/.github/workflows/reuse-app-deploy.yaml@main
     strategy:
+      max-parallel: 1
       matrix:
         value: ${{ fromJSON(needs.prepare-deployment.outputs.matrix) }}
     with:
