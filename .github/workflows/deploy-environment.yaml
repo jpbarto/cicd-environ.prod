@@ -1,0 +1,37 @@
+name: Deploy environment
+
+on:
+  push
+
+jobs:
+  prepare-deployment:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.value }}
+      environment: ${{ steps.env.outputs.value }}
+    steps:
+      - name: Checkout environment code
+        uses: actions/checkout@v5
+
+      - id: matrix
+        run: |
+          echo "value="`cat applications.json` >> $GITHUB_OUTPUT
+
+      - id: env
+        run: |
+          echo "value="`cat environment.json` >> $GITHUB_OUTPUT
+
+      - run: |
+          echo "Using environment configuration: ${{ steps.env.outputs.value }}"
+          echo "Using application configuration: ${{ steps.matrix.outputs.value }}"
+
+  perform-deployment:
+    uses: jpbarto/cicd-environ.cicd/.github/workflows/reuse-app-deploy.yaml@main
+    strategy:
+      matrix:
+        value: ${{ fromJSON(needs.prepare-deployment.outputs.matrix) }}
+    with:
+      repository: ${{ matrix.value.repository }}
+      tf_vars: ${{ matrix.value.tf_vars }}
+      helm_values: ${{ matrix.value.helm_values }}
+      env_name: ${{ fromJSON(needs.prepare-deployment.outputs.environment).environment_name }}

@@ -1,0 +1,13 @@
+[
+    {
+        "name": "platform",
+        "repository": "jpbarto/cicd-environ.platform@v1.0",
+        "tf_vars": "./terraform/platform.tfvars"
+    },
+    {
+        "name": "simples",
+        "repository": "jpbarto/cicd-environ.simples@v1.0",
+        "tf_vars": "./terraform/simples.tfvars",
+        "helm_values": "./helm/simples.yaml"
+    }
+]
