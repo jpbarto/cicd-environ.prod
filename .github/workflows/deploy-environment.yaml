@@ -24,8 +24,10 @@ jobs:
       - run: |
           echo "Using environment configuration: ${{ steps.env.outputs.value }}"
           echo "Using application configuration: ${{ steps.matrix.outputs.value }}"
+          echo "GH Output is $GITHUB_OUTPUT"
 
   perform-deployment:
+    needs: [ prepare-deployment ]
     uses: jpbarto/cicd-environ.cicd/.github/workflows/reuse-app-deploy.yaml@main
     strategy:
       matrix:
