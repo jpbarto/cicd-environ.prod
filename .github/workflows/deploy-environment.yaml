@@ -29,6 +29,7 @@ jobs:
   perform-deployment:
     needs: [ prepare-deployment ]
     uses: jpbarto/cicd-environ.cicd/.github/workflows/reuse-app-deploy.yaml@main
+    environment: aws
     strategy:
       max-parallel: 1
       matrix:
@@ -39,3 +40,7 @@ jobs:
       tf_vars: ${{ matrix.value.tf_vars }}
       helm_values: ${{ matrix.value.helm_values }}
       env_name: ${{ fromJSON(needs.prepare-deployment.outputs.environment).environment_name }}
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      aws_session_token: ${{ secrets.AWS_SESSION_TOKEN }}
