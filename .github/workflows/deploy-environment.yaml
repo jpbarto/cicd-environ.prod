@@ -29,7 +29,8 @@ jobs:
   perform-deployment:
     needs: [ prepare-deployment ]
     uses: jpbarto/cicd-environ.cicd/.github/workflows/reuse-app-deploy.yaml@main
-    environment: aws
+    environment:
+      name: aws
     strategy:
       max-parallel: 1
       matrix:
