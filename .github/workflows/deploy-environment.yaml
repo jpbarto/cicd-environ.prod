@@ -27,7 +27,6 @@ jobs:
           echo "GH Output is $GITHUB_OUTPUT"
 
   perform-deployment:
-    environment: aws
     needs: [ prepare-deployment ]
     uses: jpbarto/cicd-environ.cicd/.github/workflows/reuse-app-deploy.yaml@main
     strategy:
