@@ -35,6 +35,7 @@ jobs:
         value: ${{ fromJSON(needs.prepare-deployment.outputs.matrix) }}
     with:
       repository: ${{ matrix.value.repository }}
+      release: ${{ matrix.value.release }}
       tf_vars: ${{ matrix.value.tf_vars }}
       helm_values: ${{ matrix.value.helm_values }}
       env_name: ${{ fromJSON(needs.prepare-deployment.outputs.environment).environment_name }}
