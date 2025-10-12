@@ -39,6 +39,7 @@ jobs:
       tf_vars: ${{ matrix.value.tf_vars }}
       helm_values: ${{ matrix.value.helm_values }}
       env_name: ${{ fromJSON(needs.prepare-deployment.outputs.environment).environment_name }}
+      application_name: ${{ matrix.value.name }}
     secrets:
       aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
       aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
