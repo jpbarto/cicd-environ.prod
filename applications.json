@@ -8,7 +8,7 @@
     {
         "name": "simples",
         "repository": "jpbarto/cicd-environ.simples",
-        "release": "v1.0.2",
+        "release": "v1.0.3",
         "tf_vars": "applications/simples/terraform.tfvars",
         "helm_values": "applications/simples/helm_values.yaml"
     }
