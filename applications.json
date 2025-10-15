@@ -2,13 +2,13 @@
     {
         "name": "platform",
         "repository": "jpbarto/cicd-environ.platform",
-        "release": "v1.0.9",
+        "release": "v1.0.10",
         "tf_vars": "applications/platform/terraform.tfvars"
     },
     {
         "name": "simples",
         "repository": "jpbarto/cicd-environ.simples",
-        "release": "v1.0.5",
+        "release": "v1.0.6",
         "tf_vars": "applications/simples/terraform.tfvars",
         "helm_values": "applications/simples/helm_values.yaml"
     }
