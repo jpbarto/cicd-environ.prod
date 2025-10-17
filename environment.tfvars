@@ -1,3 +1,3 @@
 project_name = "pismo-like-environ"
 environment  = "prod"
-region       = "us-east-2"
+region       = "us-east-1"
