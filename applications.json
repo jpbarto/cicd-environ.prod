@@ -2,7 +2,7 @@
     {
         "name": "platform",
         "repository": "jpbarto/cicd-environ.platform",
-        "release": "v1.0.11",
+        "release": "v1.0.12",
         "tf_vars": "applications/platform/terraform.tfvars"
     },
     {

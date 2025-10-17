@@ -1,1 +1,1 @@
-not_needed_var = "value with no variable definition"
+cluster_size = 3
