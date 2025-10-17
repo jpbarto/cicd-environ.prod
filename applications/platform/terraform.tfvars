@@ -1,1 +1,1 @@
-region       = "us-east-2"
+not_needed_var = "value with no variable definition"
