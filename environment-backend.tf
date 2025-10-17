@@ -12,5 +12,6 @@ terraform {
     bucket = "cicd-environ-tofu-state-prod-ab12cf"
     key = "${var.cicd_environment_name}/${var.cicd_application_name}/terraform.tfstate"
     region = "us-east-2"
+    use_lockfile = true
   }
 }
