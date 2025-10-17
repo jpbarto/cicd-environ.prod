@@ -1,3 +1,3 @@
-project_name = "pismo-like-environ"
-environment  = "prod"
-region       = "us-east-1"
+project_name = "PLE-env1"
+environment  = "ple-prod"
+region       = "us-east-2"
