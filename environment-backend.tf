@@ -1,9 +1,9 @@
 variable "cicd_environment_name" {
-  type = "string"
+  type = string
 }
 
 variable "cicd_application_name" {
-  type = "string"
+  type = string
   description = "Name of the application. The name will be used in an S3 object key and must conform to S3 naming convention."
 }
 
